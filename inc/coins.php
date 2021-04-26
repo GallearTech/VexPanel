@@ -23,4 +23,6 @@ $conn->query("UPDATE users SET coins='".mysqli_real_escape_string($conn, $coins 
 $conn->query("UPDATE users SET minutes_idle='".mysqli_real_escape_string($conn, $idlemins + 1)."' WHERE discord_id='".mysqli_real_escape_string($conn, $user->id)."'");
 $conn->query("UPDATE users SET last_seen='".mysqli_real_escape_string($conn, $currenttimestamp)."' WHERE discord_id='".mysqli_real_escape_string($conn, $user->id)."'");
 header("location: ../idle.php");
+}else{
+    die("Please don't try to get more coins by exploiting!");
 }
