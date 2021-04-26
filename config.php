@@ -16,3 +16,8 @@ $conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);
 if (!$conn){
 	die("Connection Failed. " . mysqli_connect_error());
 }
+
+
+// Do NOT edit below this point.
+// Below this point is for contributors, and to gain faster support.
+$version = '0.1.2 BETA';
