@@ -32,7 +32,7 @@ CREATE TABLE `products` (
   `product_name` varchar(128) NOT NULL,
   `product_desc` varchar(128) NOT NULL,
   `product_price` int(111) NOT NULL,
-  `product_stock` text NOT NULL,
+  `product_stock` int(11) NOT NULL,
   `product_ram` int(111) NOT NULL,
   `product_cpu` int(111) NOT NULL,
   `product_disk` int(111) NOT NULL,
