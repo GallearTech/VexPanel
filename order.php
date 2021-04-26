@@ -104,11 +104,10 @@ if( checklogin() == true ) {
               <i class="nav-icon fas fa-money-check-alt"></i>
               <p>
                 Order
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
-          <!--<li class="nav-item">
+          <li class="nav-item">
             <a href="./idle.php" class="nav-link">
               <i class="nav-icon fas fa-moon"></i>
               <p>
@@ -116,7 +115,7 @@ if( checklogin() == true ) {
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>
-          </li>-->
+          </li>
       </nav>
       <!-- /.sidebar-menu -->
     </div>

@@ -8,6 +8,7 @@ if( checklogin() == true ) {
 	$user = $_SESSION['discord_user'];
 
 	$pterodactyl_panelinfo = $conn->query("SELECT * FROM users WHERE discord_id='" . mysqli_real_escape_string($conn, $user->id) . "'")->fetch_assoc();
+  $coins = $pterodactyl_panelinfo['coins'];
 }else{
   header("location: ./login.php");
 }
@@ -74,6 +75,7 @@ if( checklogin() == true ) {
         </div>
         <div class="info">
           <a href="#" class="d-block"><?php echo $user->username ?></a>
+          <span class="right badge badge-success"><?php echo $coins ?> Coins</span>
         </div>
       </div>
 
@@ -108,11 +110,10 @@ if( checklogin() == true ) {
               <i class="nav-icon fas fa-money-check-alt"></i>
               <p>
                 Order
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
-          <!--<li class="nav-item">
+          <li class="nav-item">
             <a href="./idle.php" class="nav-link">
               <i class="nav-icon fas fa-moon"></i>
               <p>
@@ -120,7 +121,7 @@ if( checklogin() == true ) {
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>
-          </li>-->
+          </li>
       </nav>
       <!-- /.sidebar-menu -->
     </div>

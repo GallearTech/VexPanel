@@ -159,6 +159,9 @@ if( checklogin() == true ) {
           You currently have <?php echo $coins ?> coins. 
           <br>
           You have idled for <?php echo $idlemins ?> minutes.
+          <br>
+          <br>
+          You'll get more coins in: <span id="timer"></span>!
         </div>
         <!-- /.card-body -->
       </div>
@@ -192,5 +195,10 @@ if( checklogin() == true ) {
 <script src="../../assets/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="assets/dist/js/demo.js"></script>
+<?php echo '<script>';
+echo "setInterval(function () { $.ajax({ url: './inc/coins.php', success: function (data) { console.log(\"Earned A Coin!\"); } }); }, 60000)";
+echo '</script>';
+?>
+<script src="./assets/dist/js/timer.js"></script>
 </body>
 </html>
