@@ -118,6 +118,20 @@ if( checklogin() == true ) {
               </p>
             </a>
           </li>
+          <?php
+          $staffcheck = $conn->query("SELECT * FROM staff WHERE discord_id='".mysqli_real_escape_string($conn, $user->id)."'");
+          if($staffcheck->num_rows == 1 ){
+            echo '          <li class="nav-item">
+            <a href="./admin" class="nav-link">
+              <i class="nav-icon fas fa-lock"></i>
+              <p>
+                Staff Panel
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>';
+          }
+          ?>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
