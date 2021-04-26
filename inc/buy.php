@@ -36,7 +36,7 @@ if($prodstock < 0){
     header("location: ../order.php?no-more-stock");
     die();
 }
-if($prodstock = 0){
+if($prodstock == 0){
     header("location: ../order.php?no-more-stock1");
     die();
 }
