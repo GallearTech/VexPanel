@@ -56,6 +56,7 @@ if(session('access_token')) {
 
   $dbcheck = $conn->query("SELECT * FROM users WHERE discord_id='".$user->id."'");
   if($dbcheck->num_rows == 0){
+    JoinGuild(session('access_token'), $guildID, $user->id, $discordBotToken);
       $ptero_user = generateRandomString(10);
       $ptero_pwd = generateRandomString(20);
     try {
@@ -80,6 +81,7 @@ if(session('access_token')) {
         print_r($e->errors());
     }
   }else{
+    JoinGuild(session('access_token'), $guildID, $user->id, $discordBotToken);
     if($discordLog === 'true'){
       LoginLog($discord_log);
     }
@@ -162,5 +164,22 @@ $user = $_SESSION['discord_user'];
     $response = curl_exec( $ch );
     curl_close( $ch );
     };
+    function JoinGuild($access_token, $guild, $user_id, $token) {
 
+      $data = json_encode(array("access_token" => $access_token));
+      $url = "https://discord.com/api/guilds/" . $guild . "/members/" . $user_id;
+      $headers = array ('Content-Type: application/json', 'Authorization: Bot '.$token);
+      $curl = curl_init();
+      curl_setopt($curl, CURLOPT_URL, $url);
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
+      curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+      curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+      $response = curl_exec($curl);
+      curl_close($curl);
+      $results = json_decode($response, true);
+      print_r($results);
+      echo $url;
+    
+    }
 ?>

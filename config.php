@@ -7,6 +7,8 @@ $pterodomain = 'pterodactyldomain'; // Pterodactyl Domain
 
 $discordLog = 'true';
 $discord_log = 'DISCORD WEBHOOK URL';
+$discordBotToken = ''; //Must be in the same application as the oauth system
+$guildID = ''; //Autojoin discord server guild id
 
 $serverName = "";
 $dBUsername = "";
@@ -20,4 +22,4 @@ if (!$conn){
 
 // Do NOT edit below this point.
 // Below this point is for contributors, and to gain faster support.
-$version = '0.2.5.7 BETA';
+$version = '0.3.1 BETA';
