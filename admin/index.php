@@ -193,6 +193,13 @@ header("location: ../");
                     <th>Discord ID</th>
                     <th>Coins</th>
                     <th>Minutes Idled</th>
+                    <?php
+                        $checkStaffLevel = $conn->query("SELECT * FROM staff WHERE discord_id='".mysqli_real_escape_string($conn, $user->id)."'")->fetch_assoc();
+                        $staffLevel = $checkStaffLevel['staff_level'];
+                        if($staffLevel = 4){
+                          echo "<th>User IP</th>";
+                        }
+                        ?>
                   </tr>
                   </thead>
                   <tbody>
@@ -206,6 +213,11 @@ if( $results->num_rows !== 0 ) {
     echo "<td>" . htmlspecialchars($rowitem['discord_id']) . "</td>";
     echo "<td>" . htmlspecialchars($rowitem['coins']) . "</td>";
     echo "<td>" . htmlspecialchars($rowitem['minutes_idle']) . "</td>";
+    $checkStaffLevel = $conn->query("SELECT * FROM staff WHERE discord_id='".mysqli_real_escape_string($conn, $user->id)."'")->fetch_assoc();
+    $staffLevel = $checkStaffLevel['staff_level'];
+    if($staffLevel = 4){
+      echo "<td>" . htmlspecialchars($rowitem['last_ip']) . "</td>";
+    }
     echo "</tr>";
   }}else{
       echo '<p><b>Seems you have no users yet!</b></p>';
@@ -218,6 +230,13 @@ if( $results->num_rows !== 0 ) {
                     <th>Discord ID</th>
                     <th>Coins</th>
                     <th>Minutes Idled</th>
+                    <?php
+                        $checkStaffLevel = $conn->query("SELECT * FROM staff WHERE discord_id='".mysqli_real_escape_string($conn, $user->id)."'")->fetch_assoc();
+                        $staffLevel = $checkStaffLevel['staff_level'];
+                        if($staffLevel = 4){
+                          echo "<th>User IP</th>";
+                        }
+                        ?>
                   </tr>
                   </tfoot>
                 </table>
