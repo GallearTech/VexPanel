@@ -114,7 +114,7 @@ header("location: ../");
             </a>
           </li>
           <li class="nav-item">
-            <a href="./order.php" class="nav-link">
+            <a href="../order.php" class="nav-link">
               <i class="nav-icon fas fa-money-check-alt"></i>
               <p>
                 Order
@@ -122,7 +122,7 @@ header("location: ../");
             </a>
           </li>
           <li class="nav-item">
-            <a href="./idle.php" class="nav-link">
+            <a href="../idle.php" class="nav-link">
               <i class="nav-icon fas fa-moon"></i>
               <p>
                 Idle
