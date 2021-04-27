@@ -105,7 +105,6 @@ if( checklogin() == true ) {
               <i class="nav-icon fas fa-money-check-alt"></i>
               <p>
                 Order
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
