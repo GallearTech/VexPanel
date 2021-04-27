@@ -206,7 +206,7 @@ if( $results->num_rows !== 0 ) {
     echo "</tr>";
   }}else{
 echo ("<b>You have no servers.</b>");
-echo '<a href="./create.php"><button href="https://gp.forcehost.net" hclass="btn btn-primary">Create One!</button></a>';
+echo '<a href="./order.php" class="btn btn-success btn-sm" role="button">Order A Server</a>';
   }
 ?>
               </tbody>
