@@ -126,7 +126,6 @@ header("location: ../");
               <i class="nav-icon fas fa-moon"></i>
               <p>
                 Idle
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
