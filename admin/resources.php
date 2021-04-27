@@ -114,7 +114,7 @@ header("location: ../");
             </a>
           </li>
           <li class="nav-item">
-            <a href="./order.php" class="nav-link">
+            <a href="../../order.php" class="nav-link">
               <i class="nav-icon fas fa-money-check-alt"></i>
               <p>
                 Order
@@ -122,7 +122,7 @@ header("location: ../");
             </a>
           </li>
           <li class="nav-item">
-            <a href="./idle.php" class="nav-link">
+            <a href="../../idle.php" class="nav-link">
               <i class="nav-icon fas fa-moon"></i>
               <p>
                 Idle
@@ -133,7 +133,7 @@ header("location: ../");
           $staffcheck = $conn->query("SELECT * FROM staff WHERE discord_id='".mysqli_real_escape_string($conn, $user->id)."'");
           if($staffcheck->num_rows == 1 ){
             echo '          <li class="nav-item">
-            <a href="./admin" class="nav-link">
+            <a href="../admin" class="nav-link">
               <i class="nav-icon fas fa-lock"></i>
               <p>
                 Staff Panel
@@ -146,7 +146,7 @@ header("location: ../");
             <a href="./resources.php" class="nav-link active">
               <i class="nav-icon fas fa-lock"></i>
               <p>
-                Staff Panel
+              Add Resources
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>

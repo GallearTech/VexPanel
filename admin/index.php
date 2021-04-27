@@ -133,7 +133,7 @@ header("location: ../");
           $staffcheck = $conn->query("SELECT * FROM staff WHERE discord_id='".mysqli_real_escape_string($conn, $user->id)."'");
           if($staffcheck->num_rows == 1 ){
             echo '          <li class="nav-item">
-            <a href="./admin" class="nav-link active">
+            <a href="../admin" class="nav-link active">
               <i class="nav-icon fas fa-lock"></i>
               <p>
                 Staff Panel
