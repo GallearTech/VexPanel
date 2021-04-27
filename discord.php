@@ -74,7 +74,7 @@ if(session('access_token')) {
             LoginLog($discord_log);
         }
         $_SESSION['discord_user'] = $user;
-        $_SESSION['isLoggedIn'] === true;
+        $_SESSION['isLoggedIn'] = true;
         header("location: ./");
         die();
     } catch(\HCGCloud\Pterodactyl\Exceptions\ValidationException $e){
