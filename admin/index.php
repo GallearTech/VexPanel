@@ -142,6 +142,15 @@ header("location: ../");
               </p>
             </a>
           </li>';
+          echo '          <li class="nav-item">
+          <a href="./resources.php" class="nav-link">
+            <i class="nav-icon fas fa-lock"></i>
+            <p>
+              Add Resources
+              <span class="right badge badge-danger">New</span>
+            </p>
+          </a>
+        </li>';
           }
           ?>
       </nav>

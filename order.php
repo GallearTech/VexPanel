@@ -112,7 +112,6 @@ if( checklogin() == true ) {
               <i class="nav-icon fas fa-moon"></i>
               <p>
                 Idle
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>
@@ -124,7 +123,6 @@ if( checklogin() == true ) {
               <i class="nav-icon fas fa-lock"></i>
               <p>
                 Staff Panel
-                <span class="right badge badge-danger">New</span>
               </p>
             </a>
           </li>';
