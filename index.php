@@ -8,6 +8,7 @@ if( checklogin() == true ) {
 	$user = $_SESSION['discord_user'];
 
 	$pterodactyl_panelinfo = $conn->query("SELECT * FROM users WHERE discord_id='" . mysqli_real_escape_string($conn, $user->id) . "'")->fetch_assoc();
+  $coins = $pterodactyl_panelinfo['coins'];
 }else{
   header("location: ./login.php");
 }
@@ -54,7 +55,7 @@ if( checklogin() == true ) {
                 </div>
                 <div class="profile-name">
                   <h5 class="mb-0 font-weight-normal"><?php echo $user->username ?></h5>
-                  <span><?php echo $user->id ?></span>
+                  <span><?php echo $coins ?> coins</span>
                 </div>
               </div>
               <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
