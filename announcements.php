@@ -88,7 +88,7 @@ if( checklogin() == true ) {
             <span class="nav-link">Navigation</span>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="./">
+            <a class="nav-link active" href="./">
               <span class="menu-icon">
                 <i class="mdi mdi-view-grid"></i>
               </span>
@@ -219,38 +219,8 @@ if( checklogin() == true ) {
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Order Status</h4>
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th> ID </th>
-                            <th> Product Name </th>
-                            <th> Product Description </th>
-                            <th> Product Price </th>
-                            <th> Product Stock </th>
-                            <th> Actions </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-$results = mysqli_query($conn, "SELECT * FROM products");
-if( $results->num_rows !== 0 ) {
-   while($rowitem = mysqli_fetch_array($results)) {
-    $server = $pterodactyl->servers();
-    echo "<tr>";
-    echo "<td>" . htmlspecialchars($rowitem['id']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['product_name']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['product_desc']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['product_price']) . " coins(s)</td>";
-    echo "<td>" . htmlspecialchars($rowitem['product_stock']) . "</td>";
-    echo "<td>" . '<a href="./inc/buy.php?id=' . $rowitem['id'] . '" class="btn btn-success btn-sm" role="button">Buy</a> &nbsp;';
-    echo "</tr>";
-  }}
-?>
-                        </tbody>
-                      </table>
-                    </div>
+                    <h4 class="card-title">Announcements</h4>
+                    <p>Sorry, this feature isn't ready yet. This feature will most likely come out during v1, you are on Version <b><?php echo $version ?></b></p>
                   </div>
                 </div>
               </div>
