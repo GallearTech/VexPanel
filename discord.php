@@ -56,7 +56,7 @@ if(session('access_token')) {
 
   $dbcheck = $conn->query("SELECT * FROM users WHERE discord_id='".$user->id."'");
   if($dbcheck->num_rows == 0){
-    JoinGuild(session('access_token'), $guildID, $user->id, $discordBotToken);
+    //JoinGuild(session('access_token'), $guildID, $user->id, $discordBotToken);
       $ptero_user = generateRandomString(10);
       $ptero_pwd = generateRandomString(20);
     try {
@@ -81,7 +81,7 @@ if(session('access_token')) {
         print_r($e->errors());
     }
   }else{
-    JoinGuild(session('access_token'), $guildID, $user->id, $discordBotToken);
+    //JoinGuild(session('access_token'), $guildID, $user->id, $discordBotToken);
     $_SESSION['discord_user'] = $user;
     $_SESSION['isLoggedIn'] = true;
     if($discordLog === 'true'){
