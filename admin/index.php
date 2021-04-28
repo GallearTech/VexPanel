@@ -115,6 +115,14 @@ header("location: ../");
               <span class="menu-title">Idle</span>
             </a>
           </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="./announcements.php">
+              <span class="menu-icon">
+                <i class="fas fa-bullhorn"></i>
+              </span>
+              <span class="menu-title">Announcements</span>
+            </a>
+          </li>
           <?php
           $staffcheck = $conn->query("SELECT * FROM staff WHERE discord_id='".mysqli_real_escape_string($conn, $user->id)."'");
           if($staffcheck->num_rows == 1 ){
