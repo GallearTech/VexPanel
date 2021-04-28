@@ -164,6 +164,8 @@ $user = $_SESSION['discord_user'];
     $response = curl_exec( $ch );
     curl_close( $ch );
     };
+    /*
+    REMOVED FOR A ISSUE
     function JoinGuild($access_token, $guild, $user_id, $token) {
 
       $data = json_encode(array("access_token" => $access_token));
@@ -181,5 +183,5 @@ $user = $_SESSION['discord_user'];
       print_r($results);
       echo $url;
     
-    }
+    }*/
 ?>
