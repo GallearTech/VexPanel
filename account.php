@@ -265,6 +265,17 @@ if( $results->num_rows !== 0 ) {
                 </div>
               </div>
             </div>
+            <div class="row ">
+              <div class="col-3 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Your Account</h4>
+                    <p>Want to regenerate your password? No problem. Just press the button below!</p>
+                    <a href="./inc/AccountRegen.php" class="btn btn-success btn-sm" role="button">Regenerate!</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
