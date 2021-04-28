@@ -11,7 +11,7 @@ if( checklogin() == true ) {
 
 if(isset($_POST['submit'])){
 $pcoins = $_POST['coins'];
-$conn->query("UPDATE users SET coins='".mysqli_real_escape_string($conn, $coins + $pcoins)."' WHERE discord_id='".mysqli_real_escape_string($conn, $_POST['did'])."'");
+$conn->query("UPDATE users SET coins='".mysqli_real_escape_string($conn, $pcoins)."' WHERE discord_id='".mysqli_real_escape_string($conn, $_POST['did'])."'");
 header("location: ../admin");
 }else{
     header("location: ../admin/resources.php");

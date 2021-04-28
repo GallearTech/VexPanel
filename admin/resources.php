@@ -227,7 +227,7 @@ header("location: ../");
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
-                        <form action="../inc/addcoins.php" method="post">
+                        <form action="../inc/setcoins.php" method="post">
                         <div class="card-body">
                       <div class="form-group">
                       <label for="coins">Amount Of Coins</label>
