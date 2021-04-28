@@ -222,7 +222,93 @@ if( checklogin() == true ) {
                 </div>
               </div>
             </div>
+
+
+
+            <div class="row">
+              <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Top Idle</h4>
+                    
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                        <tr>
+                            <th> Ranking </th>
+                            <th> Discord Username </th>
+                            <th> Minutes Idled </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+$result = mysqli_query($conn, "SELECT discord_user, minutes_idle FROM users ORDER BY minutes_idle DESC LIMIT 5"); 
+  
+/* First rank will be 1 and  
+    second be 2 and so on */
+$ranking = 1; 
+  
+/* Fetch Rows from the SQL query */
+if (mysqli_num_rows($result)) { 
+    while ($row = mysqli_fetch_array($result)) { 
+
+        echo '<tr class="mbr-text mbr-fonts-style display-7">';
+        echo '<td class="mbr-text mbr-fonts-style display-7">'.htmlspecialchars($ranking).".</td>";
+        echo '<td class="mbr-text mbr-fonts-style display-7">'.htmlspecialchars($row['discord_user'])."</td>";
+        echo '<td class="mbr-text mbr-fonts-style display-7">'.htmlspecialchars(round($row['minutes_idle']))."</td>"; 
+        echo "</tr>";
+        $ranking++;
+    } 
+} 
+?>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Top Coins</h4>
+                    <div class="table-responsive">
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                          <th> Ranking </th>
+                            <th> Discord Username </th>
+                            <th> Coins </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+$result = mysqli_query($conn, "SELECT discord_user, coins FROM users ORDER BY coins DESC LIMIT 5"); 
+  
+/* First rank will be 1 and  
+    second be 2 and so on */
+$ranking = 1; 
+  
+/* Fetch Rows from the SQL query */
+if (mysqli_num_rows($result)) { 
+    while ($row = mysqli_fetch_array($result)) { 
+
+        echo '<tr class="mbr-text mbr-fonts-style display-7">';
+        echo '<td class="mbr-text mbr-fonts-style display-7">'.htmlspecialchars($ranking).".</td>";
+        echo '<td class="mbr-text mbr-fonts-style display-7">'.htmlspecialchars($row['discord_user'])."</td>";
+        echo '<td class="mbr-text mbr-fonts-style display-7">'.htmlspecialchars(round($row['coins']))."</td>"; 
+        echo "</tr>";
+        $ranking++;
+    } 
+} 
+?>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </section>
+
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
