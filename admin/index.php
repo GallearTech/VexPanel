@@ -116,7 +116,7 @@ header("location: ../");
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="./account.php">
+            <a class="nav-link" href="../account.php">
               <span class="menu-icon">
                 <i class="fas fa-key"></i>
               </span>
@@ -124,7 +124,7 @@ header("location: ../");
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="./announcements.php">
+            <a class="nav-link" href="../announcements.php">
               <span class="menu-icon">
                 <i class="fas fa-bullhorn"></i>
               </span>
