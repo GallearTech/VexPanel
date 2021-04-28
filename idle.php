@@ -330,7 +330,7 @@ if (mysqli_num_rows($result)) {
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <strong><span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2021 <a href="https://discord.gg/S28W5fuCVt">Gallear Technologies.</a></strong></span>
+            <strong><span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2021 <a href="https://discord.gg/FkpRXtTxnk">Gallear Technologies.</a></strong></span>
               <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <b>Version</b> <?php echo $version ?></span>
             </div>
           </footer>
