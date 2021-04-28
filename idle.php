@@ -272,7 +272,7 @@ if (mysqli_num_rows($result)) {
                   <div class="card-body">
                     <h4 class="card-title">Top Coins</h4>
                     <div class="table-responsive">
-                      <table class="table table-hover">
+                      <table class="table table">
                         <thead>
                           <tr>
                           <th> Ranking </th>
