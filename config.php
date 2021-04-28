@@ -1,4 +1,6 @@
 <?php
+$siteName = 'Vex Panel';
+
 $oauth_id = '123456789'; // Discord oAuth2 id
 $oauth_secret = 'supersecretkey'; // Discord oAuth2 secret
 $oauth_url = 'http://localhost/discord.php'; //This is an example
@@ -22,4 +24,4 @@ if (!$conn){
 
 // Do NOT edit below this point.
 // Below this point is for contributors, and to gain faster support.
-$version = '0.6.1 BETA';
+$version = '0.7.5 BETA';
