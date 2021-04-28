@@ -112,6 +112,14 @@ if( checklogin() == true ) {
             </a>
           </li>
           <li class="nav-item menu-items">
+            <a class="nav-link" href="./account.php">
+              <span class="menu-icon">
+                <i class="fas fa-key"></i>
+              </span>
+              <span class="menu-title">Account</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
             <a class="nav-link" href="./announcements.php">
               <span class="menu-icon">
                 <i class="fas fa-bullhorn"></i>

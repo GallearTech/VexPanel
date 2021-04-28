@@ -1,8 +1,8 @@
 <?php
 session_start();
-require '../config.php';
-require '../inc/functions.php';
-require '../vendor/autoload.php';
+require './config.php';
+require './inc/functions.php';
+require './vendor/autoload.php';
 $pterodactyl = new \HCGCloud\Pterodactyl\Pterodactyl($apikey, $pterodomain);
 if( checklogin() == true ) {
   $user = $_SESSION['discord_user'];
@@ -134,7 +134,7 @@ header("location: ../");
           <?php
           $staffcheck = $conn->query("SELECT * FROM staff WHERE discord_id='".mysqli_real_escape_string($conn, $user->id)."'");
           if($staffcheck->num_rows == 1 ){
-            echo '<li class="nav-item menu-items active">
+            echo '<li class="nav-item menu-items">
             <a class="nav-link" href="../admin">
               <span class="menu-icon">
                 <i class="fas fa-lock"></i>
@@ -142,14 +142,6 @@ header("location: ../");
               <span class="menu-title">Staff Panel</span>
             </a>
           </li>';
-          echo '<li class="nav-item menu-items">
-          <a class="nav-link" href="./resources.php">
-            <span class="menu-icon">
-              <i class="nav-icon fas fa-lock"></i>
-            </span>
-            <span class="menu-title">Resources</span>
-          </a>
-        </li>';
           }
           ?>
         </ul>
@@ -190,7 +182,7 @@ header("location: ../");
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
-                  <a href="../logout.php" class="dropdown-item preview-item">
+                  <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
                       <div class="preview-icon bg-dark rounded-circle">
                         <i class="mdi mdi-logout text-danger"></i>
@@ -235,137 +227,34 @@ header("location: ../");
                 </div>
               </div>
             </div>-->
-            <div class="row ">
+          <div class="row ">
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">See all your users</h4>
+                    <h4 class="card-title">Panel Credentials</h4>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
                           <tr>
-                    <th>Username</th>
-                    <th>Discord ID</th>
-                    <th>Coins</th>
-                    <th>Minutes Idled</th>
-                    <?php
-                        $checkStaffLevel = $conn->query("SELECT * FROM staff WHERE discord_id='".mysqli_real_escape_string($conn, $user->id)."'")->fetch_assoc();
-                        $staffLevel = $checkStaffLevel['staff_level'];
-                        if($staffLevel = 4){
-                          echo "<th>User IP</th>";
-                        }
-                        ?>
+                    <th>Discord Name</th>
+                    <th>Discord Email</th>
+                    <th>Panel Username</th>
+                    <th>Panel Password</th>
                           </tr>
                         </thead>
                         <tbody>
                         <?php
-$results = mysqli_query($conn, "SELECT * FROM users");
+$results = mysqli_query($conn, "SELECT * FROM users WHERE discord_id='" . mysqli_real_escape_string($conn, $user->id) . "'");
 if( $results->num_rows !== 0 ) {
    while($rowitem = mysqli_fetch_array($results)) {
     $server = $pterodactyl->servers();
     echo "<tr>";
     echo "<td>" . htmlspecialchars($rowitem['discord_user']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['discord_id']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['coins']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['minutes_idle']) . "</td>";
-    $checkStaffLevel = $conn->query("SELECT * FROM staff WHERE discord_id='".mysqli_real_escape_string($conn, $user->id)."'")->fetch_assoc();
-    $staffLevel = $checkStaffLevel['staff_level'];
-    if($staffLevel = 4){
-      echo "<td>" . htmlspecialchars($rowitem['last_ip']) . "</td>";
-    }
-    echo "</tr>";
+    echo "<td>" . htmlspecialchars($rowitem['discord_email']) . "</td>";
+    echo "<td>" . htmlspecialchars($rowitem['ptero_user']) . "</td>";
+    echo "<td>" . htmlspecialchars($rowitem['ptero_pwd']) . "</td>";
   }}else{
-      echo '<p><b>Seems you have no users yet!</b></p>';
-  }
-?>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <div class="row ">
-              <div class="col-12 grid-margin">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">See all servers</h4>
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                    <th>Name</th>
-                    <th>RAM</th>
-                    <th>CPU</th>
-                    <th>Disk</th>
-                    <th>Owner</th>
-                    <th>Server ID</th>
-                    <th>Node ID</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-$results = mysqli_query($conn, "SELECT * FROM servers");
-if( $results->num_rows !== 0 ) {
-   while($rowitem = mysqli_fetch_array($results)) {
-    $server = $pterodactyl->servers();
-    echo "<tr>";
-    echo "<td>" . htmlspecialchars($rowitem['server_name']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['ram']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['cpu']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['disk_space']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['owner_id']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['server_id']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['node_id']) . "</td>";
-  }}else{
-      echo '<p><b>Seems you have no servers yet!</b></p>';
-  }
-?>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <div class="row ">
-              <div class="col-12 grid-margin">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">See all Products</h4>
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Stock</th>
-                    <th>RAM</th>
-                    <th>CPU</th>
-                    <th>Disk</th>
-                    <th>Nest ID</th>
-                    <th>Egg ID</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                        <?php
-$results = mysqli_query($conn, "SELECT * FROM products");
-if( $results->num_rows !== 0 ) {
-   while($rowitem = mysqli_fetch_array($results)) {
-    $server = $pterodactyl->servers();
-    echo "<tr>";
-    echo "<td>" . htmlspecialchars($rowitem['product_name']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['product_desc']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['product_price']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['product_stock']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['product_ram']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['product_cpu']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['product_disk']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['nest_id']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['egg_id']) . "</td>";
-  }}else{
-      echo '<p><b>Seems you have no servers yet!</b></p>';
+      echo '<p><b>Any things looks wrong, You may contact a admin</b></p>';
   }
 ?>
                         </tbody>
