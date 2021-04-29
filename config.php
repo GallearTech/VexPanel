@@ -1,5 +1,6 @@
 <?php
 $siteName = 'Vex Panel';
+$sitePassword = 'Your Sites Password!'; //Used for upcoming API features (bot)
 
 $oauth_id = '123456789'; // Discord oAuth2 id
 $oauth_secret = 'supersecretkey'; // Discord oAuth2 secret
@@ -24,4 +25,4 @@ if (!$conn){
 
 // Do NOT edit below this point.
 // Below this point is for contributors, and to gain faster support.
-$version = '0.7.6 BETA';
+$version = '0.7.9 BETA';
