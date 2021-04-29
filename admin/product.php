@@ -271,7 +271,7 @@ header("location: ../");
                       </div>
                       <div class="form-group">
                       <label for="ram">Product RAM</label>
-                      <input type="number" class="form-control" id="ram" name="ram" placeholder="Rroduct RAM" required>
+                      <input type="number" class="form-control" id="ram" name="ram" placeholder="Product RAM" required>
                       </div>
                       <div class="form-group">
                       <label for="cpu">Product CPU</label>
