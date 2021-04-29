@@ -150,6 +150,14 @@ header("location: ../");
             <span class="menu-title">Resources</span>
           </a>
         </li>';
+        echo '<li class="nav-item menu-items">
+        <a class="nav-link" href="./product.php">
+          <span class="menu-icon">
+            <i class="mdi mdi-cash-usd"></i>
+          </span>
+          <span class="menu-title">Add A Products</span>
+        </a>
+      </li>';
           }
           ?>
         </ul>

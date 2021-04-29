@@ -142,7 +142,7 @@ header("location: ../");
               <span class="menu-title">Staff Panel</span>
             </a>
           </li>';
-          echo '<li class="nav-item menu-items active">
+          echo '<li class="nav-item menu-items">
           <a class="nav-link" href="./resources.php">
             <span class="menu-icon">
               <i class="nav-icon fas fa-lock"></i>
@@ -150,7 +150,7 @@ header("location: ../");
             <span class="menu-title">Resources</span>
           </a>
         </li>';
-        echo '<li class="nav-item menu-items">
+        echo '<li class="nav-item menu-items active">
         <a class="nav-link" href="./product.php">
           <span class="menu-icon">
             <i class="mdi mdi-cash-usd"></i>
@@ -247,19 +247,47 @@ header("location: ../");
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Set Coins</h4>
+                    <h4 class="card-title">Add A Product</h4>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
-                        <form action="../inc/setcoins.php" method="post">
+                        <form action="../inc/AddProduct.php" method="post">
                         <div class="card-body">
                       <div class="form-group">
-                      <label for="coins">Amount Of Coins</label>
-                      <input type="number" class="form-control" id="coins" name="coins" placeholder="Amount Of Coins">
+                      <label for="name">Product Name</label>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Product Name" required>
                       </div>
                       <div class="form-group">
-                      <label for="did">Users Discord ID</label>
-                      <input type="number" class="form-control" id="did" name="did" placeholder="Discord ID">
+                      <label for="desc">Product Description</label>
+                      <input type="text" class="form-control" id="desc" name="desc" placeholder="Product Description" required>
+                      </div>
+                      <div class="form-group">
+                      <label for="price">Product Price</label>
+                      <input type="number" class="form-control" id="price" name="price" placeholder="Product Price" required>
+                      </div>
+                      <div class="form-group">
+                      <label for="stock">Product Stock</label>
+                      <input type="number" class="form-control" id="stock" name="stock" placeholder="Product Stock" required>
+                      </div>
+                      <div class="form-group">
+                      <label for="ram">Product RAM</label>
+                      <input type="number" class="form-control" id="ram" name="ram" placeholder="roduct RAM" required>
+                      </div>
+                      <div class="form-group">
+                      <label for="cpu">Product CPU</label>
+                      <input type="number" class="form-control" id="cpu" name="cpu" placeholder="Product CPU" required>
+                      </div>
+                      <div class="form-group">
+                      <label for="disk">Product Disk Space</label>
+                      <input type="number" class="form-control" id="disk_space" name="diskspace" placeholder="Product Disk Space" required>
+                      </div>
+                      <div class="form-group">
+                      <label for="nestid">Product Nest ID</label>
+                      <input type="number" class="form-control" id="nestid" name="nestid" placeholder="Product Nest ID" required>
+                      </div>
+                      <div class="form-group">
+                      <label for="egg">Product Egg ID</label>
+                      <input type="number" class="form-control" id="egg" name="eggid" placeholder="Product Egg ID" required>
                       </div>
                       <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                     </form>

@@ -126,4 +126,12 @@ function pingAddress($ip) {
       return mysql_num_rows($result);  
     }  
 
+    function Error($link, $msg) {
+        header("Location: ".$link."/?error=" . base64_encode($msg));
+        die();
+    }
+    function Success($link, $msg) {
+        header("Location: ".$link."/?success=" . base64_encode($msg));
+        die();
+    }
 ?>
