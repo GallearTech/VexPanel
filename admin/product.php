@@ -279,7 +279,7 @@ header("location: ../");
                       </div>
                       <div class="form-group">
                       <label for="disk">Product Disk Space</label>
-                      <input type="number" class="form-control" id="disk_space" name="diskspace" placeholder="Product Disk Space" required>
+                      <input type="number" class="form-control" id="disk_space" name="disk_space" placeholder="Product Disk Space" required>
                       </div>
                       <div class="form-group">
                       <label for="nestid">Product Nest ID</label>

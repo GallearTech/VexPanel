@@ -373,7 +373,7 @@ if( $results->num_rows !== 0 ) {
     echo "<td>" . htmlspecialchars($rowitem['nest_id']) . "</td>";
     echo "<td>" . htmlspecialchars($rowitem['egg_id']) . "</td>";
   }}else{
-      echo '<p><b>Seems you have no servers yet!</b></p>';
+      echo '<p><b>Seems you have no products yet!</b></p>';
   }
 ?>
                         </tbody>
