@@ -67,7 +67,7 @@ if( checklogin() == true ) {
                     </div>
                   </div>
                   <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">Account settings</p>
+                    <p class="preview-subject ellipsis mb-1 text-small">Account Settings</p>
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -185,12 +185,9 @@ if( checklogin() == true ) {
                       </div>
                     </div>
                     <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Log out</p>
+                      <p class="preview-subject mb-1">Logout</p>
                     </div>
                   </a>
-                  <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">Advanced settings</p>
-                </div>
               </li>
             </ul>
             <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
