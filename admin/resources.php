@@ -272,7 +272,7 @@ header("location: ../");
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Add Coins</h4>
+                    <h4 class="card-title">Add Coins [IN BETA]</h4>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
