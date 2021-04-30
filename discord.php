@@ -57,13 +57,14 @@ if(session('access_token')) {
   $dbcheck = $conn->query("SELECT * FROM users WHERE discord_id='".$user->id."'");
   if($dbcheck->num_rows == 0){
     //JoinGuild(session('access_token'), $guildID, $user->id, $discordBotToken);
-      $ptero_user = generateRandomString(10);
-      $ptero_pwd = generateRandomString(20);
+    $ptero_user = generateRandomString(10);
+    $ptero_pwd1 = generateRandomString(20);
+    $ptero_pwd = base64_encode($ptero_pwd1);
     try {
         $ptuser = $pterodactyl->createUser([
             'email' => $user->email,
             'username' => $ptero_user,
-            'password' => $ptero_pwd,
+            'password' => $ptero_pwd1,
             'language' => 'en',
             'root_admin' => false,
             'first_name' => 'A',

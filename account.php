@@ -252,7 +252,7 @@ if( $results->num_rows !== 0 ) {
     echo "<td>" . htmlspecialchars($rowitem['discord_user']) . "</td>";
     echo "<td>" . htmlspecialchars($rowitem['discord_email']) . "</td>";
     echo "<td>" . htmlspecialchars($rowitem['ptero_user']) . "</td>";
-    echo "<td>" . htmlspecialchars($rowitem['ptero_pwd']) . "</td>";
+    echo "<td>" . htmlspecialchars(base64_decode($rowitem['ptero_pwd'])) . "</td>";
     echo '<td><a href="<?php echo $pterodomain ?>" class="btn btn-success btn-sm" role="button">Login!</a></td>';
   }}else{
       echo '<p><b>If your details aren\'t showing, then please contact an admin.';
