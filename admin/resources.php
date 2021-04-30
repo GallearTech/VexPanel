@@ -268,6 +268,34 @@ header("location: ../");
                 </div>
               </div>
             </div>
+          <div class="row ">
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Add Coins</h4>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                        <form action="../inc/addcoins.php" method="post">
+                        <div class="card-body">
+                      <div class="form-group">
+                      <label for="coins">Amount Of Coins</label>
+                      <input type="number" class="form-control" id="coins" name="coins" placeholder="Amount Of Coins">
+                      </div>
+                      <div class="form-group">
+                      <label for="did">Users Discord ID</label>
+                      <input type="number" class="form-control" id="did" name="did" placeholder="Discord ID">
+                      </div>
+                      <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                  </div>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
