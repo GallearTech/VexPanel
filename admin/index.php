@@ -383,6 +383,42 @@ if( $results->num_rows !== 0 ) {
                 </div>
               </div>
             </div>
+          <div class="row ">
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">See all your staffs</h4>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                    <th>ID</th>
+                    <th>Discord ID</th>
+                    <th>Staff Level</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+$results = mysqli_query($conn, "SELECT * FROM staff");
+if( $results->num_rows !== 0 ) {
+   while($rowitem = mysqli_fetch_array($results)) {
+    $server = $pterodactyl->servers();
+    echo "<tr>";
+    echo "<td>" . htmlspecialchars($rowitem['id']) . "</td>";
+    echo "<td>" . htmlspecialchars($rowitem['discord_id']) . "</td>";
+    echo "<td>" . htmlspecialchars($rowitem['staff_level']) . "</td>";
+    echo "</tr>";
+  }}else{
+      echo '<p><b>No staffs yet? How are you accessing this page if you dont have any staffs?</b></p>';
+  }
+?>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
