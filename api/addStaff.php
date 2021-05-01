@@ -5,14 +5,14 @@ $requstAPI = $_GET['api'];
 $staffLevel = $_GET['level'];
 $userID = $_GET['req'];
 
-$checkdbForUser = $conn->query("SELECT * FROM staff WHERE discord_id='".$userID."'");
+$checkdbForUser = $conn->query("SELECT * FROM staff WHERE discord_id='".mysqli_real_escape_string($conn, $userID)."'");
 if($checkdbForUser->num_rows == 0){
     echo 'Uh oh! You don\'t show up as a staff on our system. Please contact support if this is a mistake.';
 }else{
-    $checkDBPerms = $conn->query("SELECT * FROM staff WHERE discord_id='".$userID."'")->fetch_assoc();
+    $checkDBPerms = $conn->query("SELECT * FROM staff WHERE discord_id='".mysqli_real_escape_string($conn, $userID)."'")->fetch_assoc();
     $staffLevel1 = $checkDBPerms['staff_level'];
     if($staffLevel1 == 4){
-        $checkDB = $conn->query("SELECT * FROM staff WHERE discord_id='".$newStaffID."'");
+        $checkDB = $conn->query("SELECT * FROM staff WHERE discord_id='".mysqli_real_escape_string($conn, $newStaffID)."'");
 if($checkDB->num_rows == 1){
     echo 'Seems the user is already in the database!';
 }else{

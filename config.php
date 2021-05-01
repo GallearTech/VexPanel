@@ -25,4 +25,4 @@ if (!$conn){
 
 // Do NOT edit below this point.
 // Below this point is for contributors, and to gain faster support.
-$version = '0.8.7 BETA';
+$version = '0.8.9 BETA';
