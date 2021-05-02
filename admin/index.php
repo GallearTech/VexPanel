@@ -384,7 +384,7 @@ if( $results->num_rows !== 0 ) {
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">See all your staffs</h4>
+                    <h4 class="card-title">See All Of Your Staff</h4>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
