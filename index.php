@@ -249,7 +249,7 @@ if( $results->num_rows !== 0 ) {
     echo "<td>" . htmlspecialchars($rowitem['ram']) . "mb</td>";
     echo "<td>" . htmlspecialchars($rowitem['cpu']) . "%</td>";
     echo "<td>" . htmlspecialchars($rowitem['disk_space']) . "mb</td>";
-    echo "<td>" . '<a href="./inc/delete.php?id=' . $rowitem['server_id'] . '" class="btn btn-danger btn-sm" role="button">Delete</a> &nbsp;';
+    echo "<td>" . '<a href="./inc/delete.php?id=' . $rowitem['server_id'] . '" class="btn btn-danger btn-sm" role="button">Delete</a> &nbsp; <a class="btn btn-success btn-sm" role="button">Backup (soon)</a> ';
     echo "</tr>";
   }}else{
 echo ("<b>You have no servers.</b>");
