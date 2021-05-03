@@ -8,12 +8,9 @@ if( checklogin() == true ) {
 }else{
   header("location: ./login.php");
 }
-
 if(isset($_POST['submit'])){
 $pcoins = $_POST['coins'];
-$userQuery = mysqli_query($conn, "SELECT * FROM users WHERE discord_id='" . mysqli_real_escape_string($conn, $user->id) . "'")->fetch_assoc();
-$coinsnow = $userQuery['coins'];
-$conn->query("UPDATE users SET coins='".mysqli_real_escape_string($conn, $coinsnow + $pcoins)."' WHERE discord_id='".mysqli_real_escape_string($conn, $_POST['did'])."'");
+$conn->query("UPDATE users SET coins='".mysqli_real_escape_string($conn, $coins + $_POST['coins'])."' WHERE discord_id='".mysqli_real_escape_string($conn, $user->id)."'");
 header("location: ../admin");
 }else{
     header("location: ../admin/resources.php");
