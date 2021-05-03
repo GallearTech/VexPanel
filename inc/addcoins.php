@@ -11,7 +11,8 @@ if( checklogin() == true ) {
 
 if(isset($_POST['submit'])){
 $pcoins = $_POST['coins'];
-$coinsnow = mysqli_query($conn, "SELECT * FROM users WHERE discord_id='" . mysqli_real_escape_string($conn, $user->id) . "'");
+$userQuery = mysqli_query($conn, "SELECT * FROM users WHERE discord_id='" . mysqli_real_escape_string($conn, $user->id) . "'")->fetch_assoc();
+$coinsnow = $userQuery['coins'];
 $conn->query("UPDATE users SET coins='".mysqli_real_escape_string($conn, $coinsnow + $pcoins)."' WHERE discord_id='".mysqli_real_escape_string($conn, $_POST['did'])."'");
 header("location: ../admin");
 }else{
