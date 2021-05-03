@@ -244,6 +244,41 @@ header("location: ../");
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
+                    <h4 class="card-title">Total Stats</h4>
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                    <th>Servers</th>
+                    <th>Users</th>
+                    <th>Products</th>
+                    <th>Staffs</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+$serverStats = $conn->query("SELECT * FROM servers");
+$userStats = $conn->query("SELECT * FROM users");
+$productStats = $conn->query("SELECT * FROM products");
+$staffStats = $conn->query("SELECT * FROM staff");
+echo "<tr>";
+echo "<td>" . htmlspecialchars($userStats->num_rows) . "</td>";
+echo "<td>" . htmlspecialchars($serverStats->num_rows) . "</td>";
+echo "<td>" . htmlspecialchars($productStats->num_rows) . "</td>";
+echo "<td>" . htmlspecialchars($staffStats->num_rows) . "</td>";
+echo "</tr>";
+?>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
                     <h4 class="card-title">See all your users</h4>
                     <div class="table-responsive">
                       <table class="table">
