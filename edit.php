@@ -247,11 +247,11 @@ if( checklogin() == true ) {
                         <form action="../inc/rename.php" method="post">
                         <div class="card-body">
                       <div class="form-group">
-                      <label for="coins">Server ID</label>
+                      <label for="id">Server ID</label>
                       <input type="number" class="form-control" id="id" name="id" placeholder="Server ID">
                       </div>
                       <div class="form-group">
-                      <label for="did">New Name</label>
+                      <label for="name">New Name</label>
                       <input type="text" class="form-control" id="name" name="name" placeholder="New Name">
                       </div>
                       <button type="submit" name="submit" class="btn btn-primary">Submit</button>
