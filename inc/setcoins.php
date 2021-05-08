@@ -1,7 +1,7 @@
 <?php
 require '../config.php';
 require './functions.php';
-if( checklogin() == true ) {
+if(isset($_SESSION['loggedin']) == true) {
 	$user = $_SESSION['discord_user'];
 	$pterodactyl_panelinfo = $conn->query("SELECT * FROM users WHERE discord_id='" . mysqli_real_escape_string($conn, $_POST['did']) . "'")->fetch_assoc();
     $coins = $pterodactyl_panelinfo['coins'];

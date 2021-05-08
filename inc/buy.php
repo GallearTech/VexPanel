@@ -2,7 +2,7 @@
 session_start();
 require '../config.php';
 require './functions.php';
-if( checklogin() == true ) {
+if(isset($_SESSION['loggedin']) == true) {
 	$user = $_SESSION['discord_user'];
 	$pterodactyl_panelinfo = $conn->query("SELECT * FROM users WHERE discord_id='" . mysqli_real_escape_string($conn, $user->id) . "'")->fetch_assoc();
     $userid = $pterodactyl_panelinfo['ptero_uid'];

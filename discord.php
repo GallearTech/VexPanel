@@ -72,7 +72,7 @@ if(session('access_token')) {
         ]);
         $conn->query("INSERT INTO users (discord_user, discord_id, discord_email, ptero_user, ptero_pwd, ptero_uid, signup_ip, last_ip, minutes_idle, coins, last_seen, user_roles, ram, cpu, disk_space, server_slots) VALUES ('".mysqli_real_escape_string($conn, $user->username)."', '".mysqli_real_escape_string($conn, $user->id)."', '".mysqli_real_escape_string($conn, $user->email)."', '".mysqli_real_escape_string($conn, $ptero_user)."', '".mysqli_real_escape_string($conn, $ptero_pwd)."', '".mysqli_real_escape_string($conn, $ptuser->id)."', '".mysqli_real_escape_string($conn, $userip)."', '".mysqli_real_escape_string($conn, $userip)."', '0', '0', '".mysqli_real_escape_string($conn, $t)."', '0', '0', '0', '0', '0')");
         $_SESSION['discord_user'] = $user;
-        $_SESSION['isLoggedIn'] = true;
+        $_SESSION['loggedin'] = true;
         if($discordLog === 'true'){
           LoginLog($discord_log);
       }
@@ -84,7 +84,7 @@ if(session('access_token')) {
   }else{
     //JoinGuild(session('access_token'), $guildID, $user->id, $discordBotToken);
     $_SESSION['discord_user'] = $user;
-    $_SESSION['isLoggedIn'] = true;
+    $_SESSION['loggedin'] = true;
     if($discordLog === 'true'){
       LoginLog($discord_log);
     }
