@@ -4,13 +4,13 @@ require './config.php';
 require './inc/functions.php';
 require './vendor/autoload.php';
 $pterodactyl = new \HCGCloud\Pterodactyl\Pterodactyl($apikey, $pterodomain);
-if( checklogin() == true ) {
+if(isset($_SESSION['loggedin']) == true) {
 	$user = $_SESSION['discord_user'];
 
 	$pterodactyl_panelinfo = $conn->query("SELECT * FROM users WHERE discord_id='" . mysqli_real_escape_string($conn, $user->id) . "'")->fetch_assoc();
   $coins = $pterodactyl_panelinfo['coins'];
 }else{
-  header("location: ./login.php");
+  header("Location: ./login.php");
 }
 ?>
 <!DOCTYPE html>
