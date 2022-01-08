@@ -10,12 +10,9 @@ if(isset($_SESSION['loggedin']) == true) {
   $pterodactyl_panelinfo = $conn->query("SELECT * FROM users WHERE discord_id='" . mysqli_real_escape_string($conn, $user->id) . "'")->fetch_assoc();
     $coins = $pterodactyl_panelinfo['coins'];
 }else{
-  header("location: ../login.php");
+  header("location: ./login.php");
 }
 $staffcheck = $conn->query("SELECT * FROM staff WHERE discord_id='".mysqli_real_escape_string($conn, $user->id)."'");
-if($staffcheck->num_rows == 0 ){
-header("location: ../");
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
