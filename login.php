@@ -33,7 +33,7 @@ require './config.php';
                   <div class="form-group d-flex align-items-center justify-content-between">
                   </div>
                   <div class="text-center">
-                    <button type="submit" class="btn btn-primary btn-block enter-btn"><a style="color: white;" href="./discord.php?action=login">Sign in using Discord</a></button>
+                    <button type="submit" class="btn btn-primary btn-block enter-btn"><a style="color: white;" href="./discord.php?action=login/">Sign in using Discord</a></button>
                   </div>
                 </form>
               </div>
